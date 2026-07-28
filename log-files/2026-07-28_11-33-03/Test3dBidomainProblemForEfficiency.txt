@@ -1,0 +1,61 @@
+File: Test3dBidomainProblemForEfficiency
+Type: cpu
+Showing nodes accounting for 10892ms, 92.00% of 11839ms total
+Dropped 460 nodes (cum <= 59.20ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    11828ms 99.91%  __libc_start_call_main
+         0     0%     0%    11828ms 99.91%  __libc_start_main_impl
+         0     0%     0%    11828ms 99.91%  _start
+         0     0%     0%    11825ms 99.88%  main
+         0     0%     0%    11786ms 99.55%  Test3dBidomainProblemForEfficiency::TestBidomain3d
+         0     0%     0%    11778ms 99.48%  AbstractCardiacProblem::Solve
+       1ms 0.0084% 0.0084%    11758ms 99.32%  AbstractDynamicLinearPdeSolver::Solve
+      59ms   0.5%  0.51%     9558ms 80.73%  AbstractCardiacTissue::SolveCellSystems
+      19ms  0.16%  0.67%     8641ms 72.99%  AbstractCardiacCell::ComputeExceptVoltage
+     132ms  1.11%  1.78%     8494ms 71.75%  AbstractOneStepIvpOdeSolver::InternalSolve
+     596ms  5.03%  6.82%     7894ms 66.68%  EulerIvpOdeSolver::CalculateNextYValue
+    2102ms 17.75% 24.57%     7214ms 60.93%  CellLuoRudy1991FromCellML::EvaluateYDerivatives
+    2502ms 21.13% 45.70%     4949ms 41.80%  __GI___exp
+    1874ms 15.83% 61.53%     2283ms 19.28%  __ieee754_exp_fma
+       2ms 0.017% 61.55%     1896ms 16.01%  LinearSystem::Solve
+         0     0% 61.55%     1850ms 15.63%  KSPSolve
+       3ms 0.025% 61.58%     1850ms 15.63%  KSPSolve_Private
+       2ms 0.017% 61.59%     1803ms 15.23%  KSPSolve_SYMMLQ
+       2ms 0.017% 61.61%     1121ms  9.47%  PCApply
+       2ms 0.017% 61.63%     1116ms  9.43%  PCApply_BJacobi_Singleblock
+       4ms 0.034% 61.66%      954ms  8.06%  KSPSolve_PREONLY (partial-inline)
+       1ms 0.0084% 61.67%      912ms  7.70%  MatSolve
+         0     0% 61.67%      912ms  7.70%  PCApply_ICC
+     906ms  7.65% 69.32%      911ms  7.69%  MatSolve_SeqSBAIJ_1_NaturalOrdering
+       1ms 0.0084% 69.33%      796ms  6.72%  KSP_PCApply.lto_priv.18
+     209ms  1.77% 71.10%      650ms  5.49%  CellLuoRudy1991FromCellML::GetIIonic
+       3ms 0.025% 71.12%      571ms  4.82%  MatMult
+      12ms   0.1% 71.22%      568ms  4.80%  MatMult_SeqAIJ (partial-inline)
+     547ms  4.62% 75.84%      568ms  4.80%  MatMult_SeqAIJ_Inode (inline)
+       4ms 0.034% 75.88%      426ms  3.60%  KSPConvergedDefault
+         0     0% 75.88%      384ms  3.24%  KSP_PCApply (partial-inline)
+      52ms  0.44% 76.32%      258ms  2.18%  BidomainSolver::SetupLinearSystem
+     199ms  1.68% 78.00%      255ms  2.15%  top12 (inline)
+      28ms  0.24% 78.23%      248ms  2.09%  __pow
+     131ms  1.11% 79.34%      239ms  2.02%  TimeStepper::AdvanceOneTimeStep
+     227ms  1.92% 81.26%      227ms  1.92%  asuint64 (inline)
+     220ms  1.86% 83.12%      220ms  1.86%  [libchaste_heart.so]
+       8ms 0.068% 83.18%      220ms  1.86%  __ieee754_pow_fma
+     164ms  1.39% 84.57%      164ms  1.39%  [libm.so.6]
+     134ms  1.13% 85.70%      135ms  1.14%  __ieee754_log_fma
+     122ms  1.03% 86.73%      122ms  1.03%  TimeStepper::CalculateNextTime
+      89ms  0.75% 87.48%      118ms     1%  CellLuoRudy1991FromCellML::VerifyStateVariables
+     117ms  0.99% 88.47%      117ms  0.99%  log_inline (inline)
+       4ms 0.034% 88.50%      114ms  0.96%  MatNullSpaceRemove
+         0     0% 88.50%      106ms   0.9%  VecDuplicate
+      98ms  0.83% 89.33%       98ms  0.83%  ddot_
+      79ms  0.67% 90.00%       82ms  0.69%  exp_inline (inline)
+      77ms  0.65% 90.65%       77ms  0.65%  TimeStepper::GetNextTimeStep
+       2ms 0.017% 90.67%       70ms  0.59%  VecDot
+         0     0% 90.67%       68ms  0.57%  VecDot_Seq
+       2ms 0.017% 90.68%       68ms  0.57%  VecMDot
+       1ms 0.0084% 90.69%       68ms  0.57%  VecXDot_Seq_Private.constprop.0
+      31ms  0.26% 90.95%       66ms  0.56%  TimeStepper::TimeStepper
+       4ms 0.034% 90.99%       66ms  0.56%  VecMXDot_Private
+      62ms  0.52% 91.51%       62ms  0.52%  non-virtual thunk to CellLuoRudy1991FromCellML::EvaluateYDerivatives(double, std::vector const&, std::vector&)
+      58ms  0.49% 92.00%       60ms  0.51%  VecMDot_Seq
