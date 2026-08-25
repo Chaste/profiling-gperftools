@@ -1,0 +1,65 @@
+File: Test3dBidomainProblemForEfficiency
+Type: cpu
+Showing nodes accounting for 10840ms, 91.12% of 11896ms total
+Dropped 519 nodes (cum <= 59.48ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    11888ms 99.93%  __libc_start_call_main
+         0     0%     0%    11888ms 99.93%  __libc_start_main_impl
+         0     0%     0%    11888ms 99.93%  _start
+         0     0%     0%    11885ms 99.91%  CxxTest::ErrorFormatter::run (inline)
+         0     0%     0%    11885ms 99.91%  CxxTest::TestRunner::runAllTests (inline)
+         0     0%     0%    11885ms 99.91%  CxxTest::TestRunner::runWorld (inline)
+         0     0%     0%    11885ms 99.91%  main
+         0     0%     0%    11851ms 99.62%  CxxTest::TestRunner::runSuite (inline)
+         0     0%     0%    11851ms 99.62%  CxxTest::TestRunner::runTest (inline)
+         0     0%     0%    11851ms 99.62%  Test3dBidomainProblemForEfficiency::TestBidomain3d
+       1ms 0.0084% 0.0084%    11843ms 99.55%  AbstractCardiacProblem::Solve
+         0     0% 0.0084%    11830ms 99.45%  AbstractDynamicLinearPdeSolver::Solve
+       7ms 0.059% 0.067%     9846ms 82.77%  AbstractCardiacTissue::SolveCellSystems
+      18ms  0.15%  0.22%     9028ms 75.89%  AbstractCardiacCell::ComputeExceptVoltage
+     138ms  1.16%  1.38%     8869ms 74.55%  AbstractOneStepIvpOdeSolver::InternalSolve
+     494ms  4.15%  5.53%     8329ms 70.02%  EulerIvpOdeSolver::CalculateNextYValue
+    2041ms 17.16% 22.69%     7704ms 64.76%  CellLuoRudy1991FromCellML::EvaluateYDerivatives
+    2537ms 21.33% 44.01%     5519ms 46.39%  __GI___exp
+    2646ms 22.24% 66.26%     2835ms 23.83%  __ieee754_exp_fma
+       1ms 0.0084% 66.27%     1726ms 14.51%  LinearSystem::Solve
+         0     0% 66.27%     1672ms 14.06%  KSPSolve
+       3ms 0.025% 66.29%     1672ms 14.06%  KSPSolve_Private
+       3ms 0.025% 66.32%     1621ms 13.63%  KSPSolve_SYMMLQ
+         0     0% 66.32%     1042ms  8.76%  PCApply
+       1ms 0.0084% 66.32%     1041ms  8.75%  PCApply_BJacobi_Singleblock
+         0     0% 66.32%      877ms  7.37%  KSPSolve_PREONLY (partial-inline)
+         0     0% 66.32%      853ms  7.17%  MatSolve
+     845ms  7.10% 73.43%      853ms  7.17%  MatSolve_SeqSBAIJ_1_NaturalOrdering
+         0     0% 73.43%      853ms  7.17%  PCApply_ICC
+       1ms 0.0084% 73.44%      801ms  6.73%  KSP_PCApply.lto_priv.18
+      23ms  0.19% 73.63%      655ms  5.51%  AbstractCardiacTissue::UpdateCaches (inline)
+     214ms  1.80% 75.43%      611ms  5.14%  CellLuoRudy1991FromCellML::GetIIonic
+       3ms 0.025% 75.45%      467ms  3.93%  MatMult
+       7ms 0.059% 75.51%      464ms  3.90%  MatMult_SeqAIJ
+     449ms  3.77% 79.29%      464ms  3.90%  MatMult_SeqAIJ_Inode (inline)
+       2ms 0.017% 79.30%      321ms  2.70%  KSPConvergedDefault
+         0     0% 79.30%      287ms  2.41%  KSP_PCApply (partial-inline)
+     231ms  1.94% 81.25%      231ms  1.94%  __ieee754_log_fma
+      48ms   0.4% 81.65%      228ms  1.92%  BidomainSolver::SetupLinearSystem
+     109ms  0.92% 82.57%      211ms  1.77%  TimeStepper::AdvanceOneTimeStep
+       4ms 0.034% 82.60%      201ms  1.69%  std::pow (inline)
+      24ms   0.2% 82.80%      197ms  1.66%  __pow
+      63ms  0.53% 83.33%      176ms  1.48%  top12 (inline)
+      32ms  0.27% 83.60%      173ms  1.45%  __ieee754_pow_fma
+     147ms  1.24% 84.84%      147ms  1.24%  [libm.so.6]
+         0     0% 84.84%      131ms  1.10%  VecDuplicate
+     127ms  1.07% 85.90%      127ms  1.07%  asuint64 (inline)
+      61ms  0.51% 86.42%      121ms  1.02%  CellLuoRudy1991FromCellML::VerifyStateVariables
+     107ms   0.9% 87.32%      107ms   0.9%  TimeStepper::CalculateNextTime
+     105ms  0.88% 88.20%      105ms  0.88%  [libchaste_heart.so]
+         0     0% 88.20%      104ms  0.87%  MatNullSpaceRemove
+       3ms 0.025% 88.22%       73ms  0.61%  VecMDot
+      73ms  0.61% 88.84%       73ms  0.61%  ddot_
+      72ms  0.61% 89.44%       72ms  0.61%  exp_inline (inline)
+       6ms  0.05% 89.49%       70ms  0.59%  VecMXDot_Private
+       1ms 0.0084% 89.50%       68ms  0.57%  VecDuplicate_Seq
+      68ms  0.57% 90.07%       68ms  0.57%  log_inline (inline)
+      63ms  0.53% 90.60%       64ms  0.54%  VecMDot_Seq
+       1ms 0.0084% 90.61%       63ms  0.53%  VecDuplicate_MPI
+      61ms  0.51% 91.12%       61ms  0.51%  non-virtual thunk to CellLuoRudy1991FromCellML::EvaluateYDerivatives(double, std::vector const&, std::vector&)
