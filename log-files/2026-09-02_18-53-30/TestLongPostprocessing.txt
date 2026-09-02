@@ -1,0 +1,73 @@
+File: TestLongPostprocessing
+Type: cpu
+Showing nodes accounting for 48926ms, 93.91% of 52098ms total
+Dropped 894 nodes (cum <= 260.49ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    52077ms   100%  __libc_start_call_main
+         0     0%     0%    52077ms   100%  __libc_start_main_impl
+         0     0%     0%    52077ms   100%  _start
+         0     0%     0%    52074ms   100%  CxxTest::ErrorFormatter::run (inline)
+         0     0%     0%    52074ms   100%  CxxTest::TestRunner::runAllTests (inline)
+         0     0%     0%    52074ms   100%  CxxTest::TestRunner::runWorld (inline)
+         0     0%     0%    52074ms   100%  main
+         0     0%     0%    52037ms 99.88%  CxxTest::TestRunner::runSuite (inline)
+         0     0%     0%    52037ms 99.88%  CxxTest::TestRunner::runTest (inline)
+         0     0%     0%    52037ms 99.88%  TestLongPostprocessing::Test2DSimulations
+         0     0%     0%    51974ms 99.76%  AbstractCardiacProblem::Solve
+       7ms 0.013% 0.013%    51855ms 99.53%  AbstractDynamicLinearPdeSolver::Solve
+     138ms  0.26%  0.28%    43747ms 83.97%  AbstractCardiacTissue::SolveCellSystems
+     298ms  0.57%  0.85%    31427ms 60.32%  AbstractCardiacCell::ComputeExceptVoltage
+     501ms  0.96%  1.81%    29091ms 55.84%  AbstractOneStepIvpOdeSolver::InternalSolve
+    1743ms  3.35%  5.16%    26085ms 50.07%  EulerIvpOdeSolver::CalculateNextYValue
+    7052ms 13.54% 18.69%    23997ms 46.06%  CellLuoRudy1991FromCellML::EvaluateYDerivatives
+    8438ms 16.20% 34.89%    18861ms 36.20%  __GI___exp
+    9268ms 17.79% 52.68%     9955ms 19.11%  __ieee754_exp_fma
+     316ms  0.61% 53.29%     9910ms 19.02%  AbstractCardiacTissue::UpdateCaches (inline)
+    3470ms  6.66% 59.95%     9395ms 18.03%  CellLuoRudy1991FromCellML::GetIIonic
+       2ms 0.0038% 59.95%     5972ms 11.46%  LinearSystem::Solve
+       2ms 0.0038% 59.95%     5762ms 11.06%  KSPSolve
+       3ms 0.0058% 59.96%     5761ms 11.06%  KSPSolve_Private
+      12ms 0.023% 59.98%     5750ms 11.04%  KSPSolve_CG
+       4ms 0.0077% 59.99%     3372ms  6.47%  PCApply
+       3ms 0.0058% 60.00%     3360ms  6.45%  PCApply_BJacobi_Singleblock
+       1ms 0.0019% 60.00%     3264ms  6.27%  KSPSolve_PREONLY
+       4ms 0.0077% 60.01%     3252ms  6.24%  PCApply_ICC
+       1ms 0.0019% 60.01%     3248ms  6.23%  MatSolve
+    3193ms  6.13% 66.14%     3247ms  6.23%  MatSolve_SeqSBAIJ_1_NaturalOrdering
+      32ms 0.061% 66.20%     2990ms  5.74%  std::pow (inline)
+     308ms  0.59% 66.79%     2958ms  5.68%  __pow
+     388ms  0.74% 67.53%     2648ms  5.08%  __ieee754_pow_fma
+       1ms 0.0019% 67.54%     2490ms  4.78%  KSP_PCApply.lto_priv.7
+    1169ms  2.24% 69.78%     2090ms  4.01%  MonodomainSolver::SetupLinearSystem
+     833ms  1.60% 71.38%     1841ms  3.53%  CellLuoRudy1991FromCellML::VerifyStateVariables
+       6ms 0.012% 71.39%     1517ms  2.91%  MatMult
+    1504ms  2.89% 74.28%     1511ms  2.90%  MatMult_SeqAIJ
+    1287ms  2.47% 76.75%     1287ms  2.47%  log_inline (inline)
+       7ms 0.013% 76.76%     1132ms  2.17%  KSPConvergedDefault
+     913ms  1.75% 78.51%      916ms  1.76%  exp_inline (inline)
+       1ms 0.0019% 78.52%      888ms  1.70%  KSP_PCApply
+     877ms  1.68% 80.20%      877ms  1.68%  ddot_
+     439ms  0.84% 81.04%      874ms  1.68%  TimeStepper::TimeStepper
+     344ms  0.66% 81.70%      856ms  1.64%  TimeStepper::AdvanceOneTimeStep
+     852ms  1.64% 83.34%      852ms  1.64%  TimeStepper::CalculateNextTime
+     288ms  0.55% 83.89%      717ms  1.38%  top12 (inline)
+     651ms  1.25% 85.14%      663ms  1.27%  __ieee754_log_fma
+     302ms  0.58% 85.72%      608ms  1.17%  AbstractCardiacCellInterface::SetVoltageDerivativeToZero
+     479ms  0.92% 86.64%      588ms  1.13%  AbstractOneStepIvpOdeSolver::Solve
+       3ms 0.0058% 86.64%      539ms  1.03%  VecTDot
+       1ms 0.0019% 86.65%      535ms  1.03%  VecTDot_Seq
+       3ms 0.0058% 86.65%      534ms  1.02%  VecXDot_Seq_Private.constprop.0
+     456ms  0.88% 87.53%      523ms  1.00%  AbstractIvpOdeSolver::SolveAndUpdateStateVariable
+     502ms  0.96% 88.49%      502ms  0.96%  [libchaste_heart.so]
+     471ms   0.9% 89.39%      471ms   0.9%  asuint64 (inline)
+     470ms   0.9% 90.30%      470ms   0.9%  [libm.so.6]
+       3ms 0.0058% 90.30%      459ms  0.88%  VecNorm
+       2ms 0.0038% 90.31%      442ms  0.85%  VecNorm_Seq
+     146ms  0.28% 90.59%      417ms   0.8%  std::__cxx11::basic_string::basic_string
+      81ms  0.16% 90.74%      386ms  0.74%  AbstractCardiacCell::SetVoltage (partial-inline)
+     384ms  0.74% 91.48%      384ms  0.74%  std::isinf (inline)
+     358ms  0.69% 92.17%      358ms  0.69%  TimeStepper::GetNextTimeStep
+     257ms  0.49% 92.66%      315ms   0.6%  AbstractParameterisedSystem::GetAnyVariable
+     276ms  0.53% 93.19%      276ms  0.53%  std::vector::operator[] (inline)
+     236ms  0.45% 93.64%      266ms  0.51%  AbstractParameterisedSystem::SetAnyVariable
+     140ms  0.27% 93.91%      264ms  0.51%  AbstractCardiacCell::GetVoltage (partial-inline)
