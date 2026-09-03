@@ -1,0 +1,118 @@
+File: TestMonodomainSlabLong
+Type: cpu
+Showing nodes accounting for 12797ms, 85.23% of 15015ms total
+Dropped 740 nodes (cum <= 75.08ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    15008ms   100%  __libc_start_call_main
+         0     0%     0%    15008ms   100%  __libc_start_main_impl
+         0     0%     0%    15008ms   100%  _start
+         0     0%     0%    15005ms 99.93%  CxxTest::ErrorFormatter::run (inline)
+         0     0%     0%    15005ms 99.93%  CxxTest::TestRunner::runAllTests (inline)
+         0     0%     0%    15005ms 99.93%  CxxTest::TestRunner::runWorld (inline)
+         0     0%     0%    15005ms 99.93%  main
+         0     0%     0%    14972ms 99.71%  CxxTest::TestRunner::runSuite (inline)
+         0     0%     0%    14972ms 99.71%  CxxTest::TestRunner::runTest (inline)
+         0     0%     0%    14972ms 99.71%  TestMonodomainSlabLong::TestMonodomainSlabLongWithCornerNodesStimulated
+       2ms 0.013% 0.013%    14951ms 99.57%  AbstractCardiacProblem::Solve
+       3ms  0.02% 0.033%    11407ms 75.97%  AbstractDynamicLinearPdeSolver::Solve
+      38ms  0.25%  0.29%     9408ms 62.66%  AbstractCardiacTissue::SolveCellSystems
+     134ms  0.89%  1.18%     5739ms 38.22%  AbstractCardiacCell::ComputeExceptVoltage
+     185ms  1.23%  2.41%     5004ms 33.33%  AbstractOneStepIvpOdeSolver::InternalSolve
+     162ms  1.08%  3.49%     4279ms 28.50%  EulerIvpOdeSolver::CalculateNextYValue
+     890ms  5.93%  9.42%     4063ms 27.06%  CellLuoRudy1991FromCellML::EvaluateYDerivatives
+    1849ms 12.31% 21.73%     3808ms 25.36%  __GI___exp
+       2ms 0.013% 21.74%     3478ms 23.16%  MonodomainProblem::WriteOneStep
+       1ms 0.0067% 21.75%     3303ms 22.00%  Hdf5DataWriter::PutVector
+         0     0% 21.75%     3284ms 21.87%  H5Dwrite
+       2ms 0.013% 21.76%     3246ms 21.62%  H5D__write
+     109ms  0.73% 22.49%     2761ms 18.39%  AbstractCardiacTissue::UpdateCaches (inline)
+     845ms  5.63% 28.12%     2606ms 17.36%  CellLuoRudy1991FromCellML::GetIIonic
+    1716ms 11.43% 39.55%     1858ms 12.37%  __ieee754_exp_fma
+       1ms 0.0067% 39.55%     1840ms 12.25%  H5D__chunk_collective_write
+      27ms  0.18% 39.73%     1839ms 12.25%  H5F_set_coll_metadata_reads
+      24ms  0.16% 39.89%     1575ms 10.49%  H5FD_s3comms_uriencode
+       1ms 0.0067% 39.90%     1319ms  8.78%  LinearSystem::Solve
+       9ms  0.06% 39.96%     1277ms  8.50%  H5D__chunk_cacheable
+         0     0% 39.96%     1234ms  8.22%  KSPSolve
+       3ms  0.02% 39.98%     1234ms  8.22%  KSPSolve_Private
+       3ms  0.02% 40.00%     1227ms  8.17%  KSPSolve_CG
+       3ms  0.02% 40.02%     1115ms  7.43%  H5F_block_write
+       4ms 0.027% 40.05%     1112ms  7.41%  H5PB_write
+     448ms  2.98% 43.03%     1110ms  7.39%  H5S_select_iterate
+       3ms  0.02% 43.05%     1108ms  7.38%  H5F__accum_write
+         0     0% 43.05%     1105ms  7.36%  H5FD_write
+      44ms  0.29% 43.34%     1104ms  7.35%  <unknown>
+       1ms 0.0067% 43.35%     1007ms  6.71%  H5D__mpio_select_write
+         0     0% 43.35%      900ms  5.99%  PMPI_File_write_at_all
+     877ms  5.84% 49.19%      878ms  5.85%  __GI_pwritev64
+       6ms  0.04% 49.23%      878ms  5.85%  std::pow (inline)
+      95ms  0.63% 49.86%      871ms  5.80%  __pow
+      84ms  0.56% 50.42%      776ms  5.17%  __ieee754_pow_fma
+     337ms  2.24% 52.67%      720ms  4.80%  CellLuoRudy1991FromCellML::VerifyStateVariables
+       2ms 0.013% 52.68%      682ms  4.54%  PCApply
+      83ms  0.55% 53.23%      681ms  4.54%  H5D__chunk_set_sizes
+       2ms 0.013% 53.25%      680ms  4.53%  PCApply_BJacobi_Singleblock
+     293ms  1.95% 55.20%      657ms  4.38%  MonodomainSolver::SetupLinearSystem
+         0     0% 55.20%      646ms  4.30%  KSPSolve_PREONLY
+       2ms 0.013% 55.21%      644ms  4.29%  MatSolve
+         0     0% 55.21%      644ms  4.29%  PCApply_ICC
+     633ms  4.22% 59.43%      642ms  4.28%  MatSolve_SeqSBAIJ_1_NaturalOrdering
+      69ms  0.46% 59.89%      579ms  3.86%  H5S_mpio_space_type
+       2ms 0.013% 59.90%      484ms  3.22%  KSP_PCApply.lto_priv.7
+       2ms 0.013% 59.91%      468ms  3.12%  MatMult
+     464ms  3.09% 63.00%      466ms  3.10%  MatMult_SeqAIJ
+     367ms  2.44% 65.45%      367ms  2.44%  log_inline (inline)
+       8ms 0.053% 65.50%      289ms  1.92%  KSPConvergedDefault
+     284ms  1.89% 67.39%      284ms  1.89%  exp_inline (inline)
+     124ms  0.83% 68.22%      262ms  1.74%  TimeStepper::TimeStepper
+      44ms  0.29% 68.51%      238ms  1.59%  __GI___libc_malloc
+     179ms  1.19% 69.70%      216ms  1.44%  _int_malloc
+      18ms  0.12% 69.82%      214ms  1.43%  H5VM_chunk_index
+         0     0% 69.82%      203ms  1.35%  KSP_PCApply
+      15ms   0.1% 69.92%      191ms  1.27%  ompi_datatype_create
+     191ms  1.27% 71.20%      191ms  1.27%  std::isinf (inline)
+       9ms  0.06% 71.26%      186ms  1.24%  ompi_datatype_destroy
+       8ms 0.053% 71.31%      185ms  1.23%  MPI_Type_free
+      29ms  0.19% 71.50%      184ms  1.23%  __GI___libc_free
+     110ms  0.73% 72.23%      179ms  1.19%  top12 (inline)
+       3ms  0.02% 72.25%      173ms  1.15%  Hdf5DataWriter::PutUnlimitedVariable
+     167ms  1.11% 73.37%      167ms  1.11%  [libchaste_heart.so]
+       9ms  0.06% 73.43%      166ms  1.11%  ompi_info_register_framework_params
+      37ms  0.25% 73.67%      162ms  1.08%  ompi_datatype_release_args
+      35ms  0.23% 73.91%      160ms  1.07%  AbstractCardiacCell::SetVoltage (partial-inline)
+      75ms   0.5% 74.41%      158ms  1.05%  AbstractCardiacCellInterface::SetVoltageDerivativeToZero
+     125ms  0.83% 75.24%      156ms  1.04%  AbstractOneStepIvpOdeSolver::Solve
+      66ms  0.44% 75.68%      153ms  1.02%  _int_free
+     128ms  0.85% 76.53%      147ms  0.98%  AbstractIvpOdeSolver::SolveAndUpdateStateVariable
+      15ms   0.1% 76.63%      142ms  0.95%  H5S_set_version
+     142ms  0.95% 77.58%      142ms  0.95%  ddot_
+     129ms  0.86% 78.43%      129ms  0.86%  TimeStepper::CalculateNextTime
+      51ms  0.34% 78.77%      127ms  0.85%  H5VM_array_calc
+       4ms 0.027% 78.80%      122ms  0.81%  PMPI_Type_create_resized
+       1ms 0.0067% 78.81%      120ms   0.8%  PMPI_File_set_view
+     119ms  0.79% 79.60%      119ms  0.79%  __ieee754_log_fma
+      52ms  0.35% 79.95%      114ms  0.76%  H5S_hyper_add_span_element
+     111ms  0.74% 80.69%      111ms  0.74%  H5VM_chunk_index_scaled
+       3ms  0.02% 80.71%      110ms  0.73%  ompi_datatype_duplicate
+      31ms  0.21% 80.91%      106ms  0.71%  ompi_datatype_set_args
+       2ms 0.013% 80.93%      104ms  0.69%  VecNorm
+      47ms  0.31% 81.24%      103ms  0.69%  std::__cxx11::basic_string::basic_string
+     102ms  0.68% 81.92%      102ms  0.68%  [libm.so.6]
+      94ms  0.63% 82.54%       99ms  0.66%  AbstractParameterisedSystem::SetAnyVariable
+      98ms  0.65% 83.20%       98ms  0.65%  __memcpy_avx_unaligned_erms
+      81ms  0.54% 83.74%       97ms  0.65%  AbstractParameterisedSystem::GetAnyVariable
+         0     0% 83.74%       97ms  0.65%  VecNorm_Seq
+       5ms 0.033% 83.77%       94ms  0.63%  MPI_Type_contiguous
+       1ms 0.0067% 83.78%       89ms  0.59%  H5D__chunk_allocated
+       1ms 0.0067% 83.78%       88ms  0.59%  MPI_Type_create_hindexed
+         0     0% 83.78%       86ms  0.57%  H5D__select_write
+       1ms 0.0067% 83.79%       86ms  0.57%  H5Dgather
+      86ms  0.57% 84.36%       86ms  0.57%  H5VM_array_offset_pre
+       5ms 0.033% 84.40%       85ms  0.57%  H5D__contig_fill
+      82ms  0.55% 84.94%       83ms  0.55%  std::vector::operator[] (inline)
+       1ms 0.0067% 84.95%       80ms  0.53%  H5VM_opvv
+         0     0% 84.95%       79ms  0.53%  H5D__contig_write
+      39ms  0.26% 85.21%       78ms  0.52%  AbstractCardiacCell::GetVoltage (partial-inline)
+       2ms 0.013% 85.22%       76ms  0.51%  H5Pcreate
+         0     0% 85.22%       76ms  0.51%  VecDuplicate
+       1ms 0.0067% 85.23%       76ms  0.51%  VecDuplicate_MPI
