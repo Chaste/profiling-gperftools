@@ -1,0 +1,112 @@
+File: Test3dBidomainProblemForEfficiencyWithFasterOdes
+Type: cpu
+Showing nodes accounting for 3715ms, 86.21% of 4309ms total
+Dropped 482 nodes (cum <= 21.55ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     4300ms 99.79%  __libc_start_call_main
+         0     0%     0%     4300ms 99.79%  __libc_start_main_impl
+         0     0%     0%     4300ms 99.79%  _start
+         0     0%     0%     4296ms 99.70%  CxxTest::ErrorFormatter::run (inline)
+         0     0%     0%     4296ms 99.70%  CxxTest::TestRunner::runAllTests (inline)
+         0     0%     0%     4296ms 99.70%  CxxTest::TestRunner::runWorld (inline)
+         0     0%     0%     4296ms 99.70%  main
+         0     0%     0%     4249ms 98.61%  CxxTest::TestRunner::runSuite (inline)
+         0     0%     0%     4249ms 98.61%  CxxTest::TestRunner::runTest (inline)
+         0     0%     0%     4249ms 98.61%  Test3dBidomainProblemForEfficiencyWithFasterOdes::TestBidomain3d
+         0     0%     0%     4241ms 98.42%  AbstractCardiacProblem::Solve
+       1ms 0.023% 0.023%     4226ms 98.07%  AbstractDynamicLinearPdeSolver::Solve
+      22ms  0.51%  0.53%     1961ms 45.51%  AbstractCardiacTissue::SolveCellSystems
+       2ms 0.046%  0.58%     1893ms 43.93%  LinearSystem::Solve
+         0     0%  0.58%     1847ms 42.86%  KSPSolve
+       7ms  0.16%  0.74%     1847ms 42.86%  KSPSolve_Private
+       3ms  0.07%  0.81%     1798ms 41.73%  KSPSolve_CG
+      54ms  1.25%  2.07%     1310ms 30.40%  AbstractBackwardEulerCardiacCell::ComputeExceptVoltage
+     274ms  6.36%  8.42%     1149ms 26.67%  CellLuoRudy1991FromCellMLBackwardEulerOpt::ComputeOneStepExceptVoltage
+         0     0%  8.42%     1099ms 25.50%  PCApply
+         0     0%  8.42%     1092ms 25.34%  PCApply_BJacobi_Singleblock
+         0     0%  8.42%      936ms 21.72%  KSPSolve_PREONLY (partial-inline)
+       5ms  0.12%  8.54%      883ms 20.49%  MatSolve
+         0     0%  8.54%      883ms 20.49%  PCApply_ICC
+     867ms 20.12% 28.66%      874ms 20.28%  MatSolve_SeqSBAIJ_1_NaturalOrdering (partial-inline)
+         0     0% 28.66%      866ms 20.10%  KSP_PCApply.lto_priv.7
+       3ms  0.07% 28.73%      571ms 13.25%  MatMult
+      13ms   0.3% 29.03%      570ms 13.23%  AbstractCardiacTissue::UpdateCaches (inline)
+      10ms  0.23% 29.26%      555ms 12.88%  MatMult_SeqAIJ (partial-inline)
+     543ms 12.60% 41.87%      551ms 12.79%  MatMult_SeqAIJ_Inode (inline)
+     142ms  3.30% 45.16%      525ms 12.18%  CellLuoRudy1991FromCellMLBackwardEulerOpt::GetIIonic
+      71ms  1.65% 46.81%      504ms 11.70%  CardiacNewtonSolver::Solve
+       1ms 0.023% 46.83%      326ms  7.57%  KSPConvergedDefault
+         0     0% 46.83%      321ms  7.45%  KSP_PCApply (partial-inline)
+      74ms  1.72% 48.55%      308ms  7.15%  BidomainSolver::SetupLinearSystem
+      79ms  1.83% 50.38%      295ms  6.85%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::IndexTable0 (inline)
+     159ms  3.69% 54.07%      287ms  6.66%  CellLuoRudy1991FromCellMLBackwardEulerOpt::ComputeResidual
+      28ms  0.65% 54.72%      242ms  5.62%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::Instance
+         0     0% 54.72%      210ms  4.87%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables (inline)
+      40ms  0.93% 55.65%      210ms  4.87%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::RegenerateTables
+     200ms  4.64% 60.29%      200ms  4.64%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::_lookup_0_row (inline)
+       2ms 0.046% 60.34%      159ms  3.69%  std::pow (inline)
+      20ms  0.46% 60.80%      156ms  3.62%  __pow
+     150ms  3.48% 64.28%      152ms  3.53%  __ieee754_log_fma
+       3ms  0.07% 64.35%      138ms  3.20%  MatNullSpaceRemove
+      16ms  0.37% 64.72%      134ms  3.11%  __ieee754_pow_fma
+         0     0% 64.72%      130ms  3.02%  boost::numeric::ublas::norm_inf (inline)
+      89ms  2.07% 66.79%      130ms  3.02%  boost::numeric::ublas::vector_norm_inf::apply (inline)
+         0     0% 66.79%      130ms  3.02%  boost::numeric::ublas::vector_scalar_unary::evaluate (inline)
+         0     0% 66.79%      130ms  3.02%  boost::numeric::ublas::vector_scalar_unary::operator double (inline)
+      47ms  1.09% 67.88%      129ms  2.99%  __GI___exp
+     115ms  2.67% 70.55%      115ms  2.67%  ddot_
+      68ms  1.58% 72.13%      101ms  2.34%  CellLuoRudy1991FromCellMLBackwardEulerOpt::VerifyStateVariables
+         0     0% 72.13%       94ms  2.18%  VecDuplicate
+      25ms  0.58% 72.71%       92ms  2.14%  MPI_Wtime
+       4ms 0.093% 72.80%       85ms  1.97%  VecNorm
+      81ms  1.88% 74.68%       85ms  1.97%  exp_inline (inline)
+         0     0% 74.68%       81ms  1.88%  VecTDot
+         0     0% 74.68%       80ms  1.86%  VecMDot
+       6ms  0.14% 74.82%       80ms  1.86%  VecMXDot_Private
+         0     0% 74.82%       68ms  1.58%  VecTDot_Seq
+         0     0% 74.82%       68ms  1.58%  VecXDot_Seq_Private.constprop.0
+      11ms  0.26% 75.08%       67ms  1.55%  PetscLogEventBeginDefault
+      67ms  1.55% 76.63%       67ms  1.55%  [[vdso]]
+         0     0% 76.63%       67ms  1.55%  __GI___clock_gettime
+         0     0% 76.63%       62ms  1.44%  VecNorm_Seq
+      22ms  0.51% 77.14%       58ms  1.35%  AbstractBidomainSolver::CheckCompatibilityCondition
+         0     0% 77.14%       58ms  1.35%  AbstractBidomainSolver::FinaliseLinearSystem
+      11ms  0.26% 77.40%       57ms  1.32%  PetscLogEventEndDefault
+      57ms  1.32% 78.72%       57ms  1.32%  [libchaste_heart.so]
+      55ms  1.28% 80.00%       56ms  1.30%  VecMDot_Seq
+       4ms 0.093% 80.09%       55ms  1.28%  VecMAXPY
+      39ms  0.91% 80.99%       53ms  1.23%  __ieee754_exp_fma
+       1ms 0.023% 81.02%       52ms  1.21%  VecDestroy
+       1ms 0.023% 81.04%       50ms  1.16%  VecDuplicate_Seq
+         0     0% 81.04%       48ms  1.11%  KSP_RemoveNullSpace (inline)
+       2ms 0.046% 81.09%       44ms  1.02%  VecDuplicate_MPI
+         0     0% 81.09%       43ms     1%  CxxTest::RealWorldDescription::setUp
+         0     0% 81.09%       43ms     1%  PetscInitialize
+         0     0% 81.09%       43ms     1%  PetscSetup::setUpWorld
+         0     0% 81.09%       43ms     1%  PetscSetupUtils::CommonSetup
+         0     0% 81.09%       43ms     1%  PetscSetupUtils::InitialisePetsc
+         0     0% 81.09%       42ms  0.97%  PMPI_Init_thread
+         0     0% 81.09%       42ms  0.97%  ompi_mpi_init
+         0     0% 81.09%       41ms  0.95%  boost::numeric::ublas::scalar_traits::norm_inf (inline)
+         0     0% 81.09%       41ms  0.95%  boost::numeric::ublas::scalar_traits::type_abs (inline)
+         0     0% 81.09%       41ms  0.95%  boost_numeric_ublas_abs (inline)
+      41ms  0.95% 82.04%       41ms  0.95%  std::abs (inline)
+       6ms  0.14% 82.18%       38ms  0.88%  <unknown>
+       6ms  0.14% 82.32%       37ms  0.86%  PetscMallocA
+       2ms 0.046% 82.36%       37ms  0.86%  VecCreate
+      29ms  0.67% 83.04%       32ms  0.74%  VecMAXPY_Seq
+      32ms  0.74% 83.78%       32ms  0.74%  [libm.so.6]
+       4ms 0.093% 83.87%       31ms  0.72%  PetscMallocAlign
+      31ms  0.72% 84.59%       31ms  0.72%  log_inline (inline)
+       2ms 0.046% 84.64%       29ms  0.67%  VecCopy
+         0     0% 84.64%       29ms  0.67%  VecNorm_MPI
+         0     0% 84.64%       29ms  0.67%  VecNorm_MPI_Default.constprop.0
+      11ms  0.26% 84.89%       28ms  0.65%  AbstractCardiacCell::SetVoltage
+       4ms 0.093% 84.98%       27ms  0.63%  VecCreate_MPI_Private
+         0     0% 84.98%       27ms  0.63%  orte_init
+      25ms  0.58% 85.57%       25ms  0.58%  DistributedVector::Iterator::operator!=
+       2ms 0.046% 85.61%       25ms  0.58%  VecSetType
+         0     0% 85.61%       24ms  0.56%  PetscMemcpy (inline)
+         0     0% 85.61%       24ms  0.56%  VecAXPY
+      22ms  0.51% 86.12%       22ms  0.51%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::CheckIndex0 (inline)
+       4ms 0.093% 86.21%       22ms  0.51%  PetscHeaderDestroy_Private
