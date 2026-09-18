@@ -1,8 +1,7 @@
 import pathlib
-import dominate
 
 from datetime import datetime
-from dominate.tags import *
+from html import escape
 
 
 def get_list_of_log_file_directories() -> list[str]:
@@ -19,7 +18,7 @@ def get_list_of_log_file_directories() -> list[str]:
 
 
 def write_index_file(list_of_logs: list[str]) -> None:
-    """Write an index.html file containing hyperlinks to the log file directories contained in this directory.              
+    """Write an index.html file containing hyperlinks to the log file directories contained in this directory.
 
     Args:
         list_of_logs: A list of strings of log file directories to put in the index file.
@@ -28,35 +27,44 @@ def write_index_file(list_of_logs: list[str]) -> None:
         None.
     """
 
-    doc = dominate.document(title='Index of GProf profiling output')
+    title = 'Index of gperftools profiling output'
 
-    dates = [datetime.strptime(x, '%Y-%m-%d_%H-%M-%S') for x in list_of_logs]
+    # Directory names are "<timestamp>-<run id>"; only the leading 19 characters
+    # (YYYY-MM-DD_HH-MM-SS) are the timestamp.
+    dates = [datetime.strptime(x[:19], '%Y-%m-%d_%H-%M-%S') for x in list_of_logs]
 
     unique_dates = {datetime(year=date.year, month=date.month, day=1) for date in dates}
     unique_dates = sorted(list(unique_dates), reverse=True)
 
-    with doc.head:
-        link(rel='stylesheet', href='style.css')
+    sections = []
+    for unique_date in unique_dates:
+        items = []
+        for path, date in zip(list_of_logs, dates):
+            if date.year == unique_date.year and date.month == unique_date.month:
+                escaped_path = escape(path)
+                items.append(f'      <li>\n        <a href="{escaped_path}/index.html">{escaped_path}</a>\n      </li>')
 
-    with doc:
+        sections.append(f'    <h2>{escape(unique_date.strftime("%B %Y"))}</h2>\n    <ul>\n' + '\n'.join(items) + '\n    </ul>')
 
-        with div(id='title'):
-            h1('Index of GProf profiling output')
+    html = f'''<!DOCTYPE html>
+<html>
+  <head>
+    <title>{escape(title)}</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="title">
+      <h1>{escape(title)}</h1>
+    </div>
+    <div id="list-by-month" class="body">
+''' + '\n'.join(sections) + '''
+    </div>
+  </body>
+</html>
+'''
 
-        with div(id='list-by-month'):
-            attr(cls='body')
-            
-            for unique_date in unique_dates:
-                h2(unique_date.strftime("%B %Y"))
-
-                with ul():
-
-                    for path, date in zip(list_of_logs, dates):
-                        if date.year == unique_date.year and date.month == unique_date.month:
-                            li(a(path, href=f'{path}/index.html'))
-    
     with open('log-files/index.html', 'w') as html_file:
-        html_file.write(doc.render())
+        html_file.write(html)
 
 
 if __name__ == "__main__":
