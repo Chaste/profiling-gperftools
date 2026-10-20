@@ -1,0 +1,103 @@
+File: TestConvergenceEfficiency
+Type: cpu
+Showing nodes accounting for 69374ms, 90.62% of 76558ms total
+Dropped 1084 nodes (cum <= 382.79ms)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    76538ms   100%  __libc_start_call_main
+         0     0%     0%    76538ms   100%  __libc_start_main_impl
+         0     0%     0%    76538ms   100%  _start
+         0     0%     0%    76536ms   100%  CxxTest::ErrorFormatter::run (inline)
+         0     0%     0%    76536ms   100%  CxxTest::TestRunner::runAllTests (inline)
+         0     0%     0%    76536ms   100%  CxxTest::TestRunner::runWorld (inline)
+         0     0%     0%    76536ms   100%  main
+         0     0%     0%    76504ms 99.93%  AbstractConvergenceTester::Converge
+         0     0%     0%    76504ms 99.93%  CxxTest::RealTestDescription::run
+         0     0%     0%    76504ms 99.93%  CxxTest::TestRunner::runSuite (inline)
+         0     0%     0%    76504ms 99.93%  CxxTest::TestRunner::runTest (inline)
+         0     0%     0%    76504ms 99.93%  TestConvergenceEfficiency::Test3DSpace10Efficiency (inline)
+         0     0%     0%    76504ms 99.93%  TestDescription_TestConvergenceEfficiency_Test3DSpace10Efficiency::runTest (inline)
+       1ms 0.0013% 0.0013%    75754ms 98.95%  AbstractCardiacProblem::Solve
+       2ms 0.0026% 0.0039%    75224ms 98.26%  AbstractDynamicLinearPdeSolver::Solve
+       3ms 0.0039% 0.0078%    45668ms 59.65%  LinearSystem::Solve
+       1ms 0.0013% 0.0091%    45423ms 59.33%  KSPSolve
+      21ms 0.027% 0.037%    45422ms 59.33%  KSPSolve_Private
+      15ms  0.02% 0.056%    45214ms 59.06%  KSPSolve_SYMMLQ
+       2ms 0.0026% 0.059%    24303ms 31.74%  PCApply
+       8ms  0.01% 0.069%    24290ms 31.73%  PCApply_BJacobi_Singleblock
+     141ms  0.18%  0.25%    23350ms 30.50%  AbstractCardiacTissue::SolveCellSystems
+       6ms 0.0078%  0.26%    22563ms 29.47%  KSPSolve_PREONLY (partial-inline)
+       1ms 0.0013%  0.26%    21870ms 28.57%  PCApply_ICC
+      12ms 0.016%  0.28%    21869ms 28.57%  MatSolve
+   21699ms 28.34% 28.62%    21857ms 28.55%  MatSolve_SeqSBAIJ_1_NaturalOrdering
+       8ms  0.01% 28.63%    21106ms 27.57%  KSP_PCApply.lto_priv.18
+     372ms  0.49% 29.12%    18479ms 24.14%  AbstractBackwardEulerCardiacCell::ComputeExceptVoltage
+       6ms 0.0078% 29.13%    18172ms 23.74%  MatMult
+      76ms 0.099% 29.22%    18166ms 23.73%  MatMult_SeqAIJ
+   18066ms 23.60% 52.82%    18166ms 23.73%  MatMult_SeqAIJ_Inode (inline)
+    3109ms  4.06% 56.88%    15988ms 20.88%  CellLuoRudy1991FromCellMLBackwardEulerOpt::ComputeOneStepExceptVoltage
+    1571ms  2.05% 58.94%    10563ms 13.80%  CardiacNewtonSolver::Solve
+    3557ms  4.65% 63.58%     6205ms  8.10%  CellLuoRudy1991FromCellMLBackwardEulerOpt::ComputeResidual
+     465ms  0.61% 64.19%     5351ms  6.99%  BidomainSolver::SetupLinearSystem
+         0     0% 64.19%     4348ms  5.68%  KSP_PCApply (partial-inline)
+      55ms 0.072% 64.26%     4284ms  5.60%  AbstractCardiacTissue::UpdateCaches (inline)
+     975ms  1.27% 65.53%     4039ms  5.28%  CellLuoRudy1991FromCellMLBackwardEulerOpt::GetIIonic
+       7ms 0.0091% 65.54%     3993ms  5.22%  KSPConvergedDefault
+    2442ms  3.19% 68.73%     2511ms  3.28%  __ieee754_log_fma
+         0     0% 68.73%     2468ms  3.22%  boost::numeric::ublas::norm_inf (inline)
+    1506ms  1.97% 70.70%     2468ms  3.22%  boost::numeric::ublas::vector_norm_inf::apply (inline)
+         0     0% 70.70%     2468ms  3.22%  boost::numeric::ublas::vector_scalar_unary::evaluate (inline)
+         0     0% 70.70%     2468ms  3.22%  boost::numeric::ublas::vector_scalar_unary::operator double (inline)
+       4ms 0.0052% 70.71%     2237ms  2.92%  MatNullSpaceRemove
+     167ms  0.22% 70.92%     2126ms  2.78%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::IndexTable0 (inline)
+      27ms 0.035% 70.96%     2065ms  2.70%  std::pow (inline)
+     377ms  0.49% 71.45%     2038ms  2.66%  __pow
+    1159ms  1.51% 72.97%     1995ms  2.61%  CellLuoRudy1991FromCellMLBackwardEulerOpt::VerifyStateVariables
+      12ms 0.016% 72.98%     1820ms  2.38%  VecAXPY
+       2ms 0.0026% 72.98%     1808ms  2.36%  VecAXPY_Seq
+    1794ms  2.34% 75.33%     1794ms  2.34%  daxpy_
+    1774ms  2.32% 77.64%     1774ms  2.32%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::_lookup_0_row (inline)
+     151ms   0.2% 77.84%     1635ms  2.14%  __ieee754_pow_fma
+       1ms 0.0013% 77.84%     1505ms  1.97%  VecMDot
+       4ms 0.0052% 77.85%     1504ms  1.96%  VecMXDot_Private
+    1484ms  1.94% 79.79%     1492ms  1.95%  VecMDot_Seq
+    1475ms  1.93% 81.71%     1475ms  1.93%  ddot_
+    1408ms  1.84% 83.55%     1408ms  1.84%  __memcpy_avx512_unaligned_erms
+         0     0% 83.55%     1394ms  1.82%  PetscMemcpy (inline)
+      17ms 0.022% 83.57%     1266ms  1.65%  VecCopy
+       3ms 0.0039% 83.58%     1247ms  1.63%  VecCopy_Seq (partial-inline)
+       6ms 0.0078% 83.59%     1247ms  1.63%  VecDot
+         0     0% 83.59%     1241ms  1.62%  VecDot_Seq
+       3ms 0.0039% 83.59%     1241ms  1.62%  VecXDot_Seq_Private.constprop.0
+       5ms 0.0065% 83.60%     1160ms  1.52%  AbstractFeVolumeIntegralAssembler::DoAssemble
+    1000ms  1.31% 84.90%     1131ms  1.48%  exp_inline (inline)
+       6ms 0.0078% 84.91%      935ms  1.22%  AbstractFeVolumeIntegralAssembler::AssembleOnElement
+         0     0% 84.91%      879ms  1.15%  boost::numeric::ublas::scalar_traits::norm_inf (inline)
+         0     0% 84.91%      879ms  1.15%  boost::numeric::ublas::scalar_traits::type_abs (inline)
+         0     0% 84.91%      879ms  1.15%  boost_numeric_ublas_abs (inline)
+     879ms  1.15% 86.06%      879ms  1.15%  std::abs (inline)
+         0     0% 86.06%      767ms  1.00%  AbstractFeAssemblerInterface::AssembleMatrix (inline)
+     503ms  0.66% 86.72%      747ms  0.98%  CellLuoRudy1991FromCellMLBackwardEulerOpt_LookupTables::Instance
+       5ms 0.0065% 86.72%      728ms  0.95%  VecMAXPY
+     721ms  0.94% 87.66%      723ms  0.94%  VecMAXPY_Seq
+     692ms   0.9% 88.57%      692ms   0.9%  [libchaste_heart.so]
+         0     0% 88.57%      628ms  0.82%  CuboidMeshConstructor::Construct
+         0     0% 88.57%      627ms  0.82%  AbstractTetrahedralMesh::ConstructRegularSlabMesh
+       2ms 0.0026% 88.57%      627ms  0.82%  DistributedTetrahedralMesh::ConstructCuboid
+       7ms 0.0091% 88.58%      580ms  0.76%  boost::numeric::ublas::matrix_assign (inline)
+         0     0% 88.58%      575ms  0.75%  Element::Element
+      69ms  0.09% 88.67%      573ms  0.75%  boost::numeric::ublas::indexing_matrix_assign
+       1ms 0.0013% 88.67%      562ms  0.73%  AbstractBidomainSolver::FinaliseLinearSystem
+     159ms  0.21% 88.88%      561ms  0.73%  AbstractBidomainSolver::CheckCompatibilityCondition
+       4ms 0.0052% 88.88%      537ms   0.7%  AbstractTetrahedralElement::CalculateJacobian
+         0     0% 88.88%      505ms  0.66%  AbstractTetrahedralElement::AbstractTetrahedralElement
+         0     0% 88.88%      477ms  0.62%  BidomainProblem::WriteOneStep
+     470ms  0.61% 89.50%      470ms  0.61%  __memset_avx512_unaligned_erms
+       2ms 0.0026% 89.50%      469ms  0.61%  VecDuplicate
+       3ms 0.0039% 89.50%      464ms  0.61%  boost::numeric::ublas::c_matrix::c_matrix (inline)
+       6ms 0.0078% 89.51%      463ms   0.6%  VecScale
+         0     0% 89.51%      461ms   0.6%  PetscMemzero (inline)
+       4ms 0.0052% 89.52%      458ms   0.6%  BidomainAssembler::ComputeMatrixTerm
+       4ms 0.0052% 89.52%      457ms   0.6%  VecScale_Seq
+     452ms  0.59% 90.11%      452ms  0.59%  dscal_
+         0     0% 90.11%      393ms  0.51%  AbstractFeAssemblerInterface::Assemble (inline)
+     385ms   0.5% 90.62%      385ms   0.5%  std::isinf (inline)
